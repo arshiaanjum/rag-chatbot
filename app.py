@@ -1,15 +1,12 @@
 import os
-from dotenv import load_dotenv
 import streamlit as st
 from pypdf import PdfReader
 from sentence_transformers import SentenceTransformer
 import numpy as np
 from groq import Groq
 
-load_dotenv()
-
 # ---- CONFIG ----
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 MODEL = "llama-3.3-70b-versatile"
 
 client = Groq(api_key=GROQ_API_KEY)
